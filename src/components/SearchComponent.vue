@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { ref } from "vue";
 import axios from "axios";
 let film = ref("");
@@ -15,7 +15,7 @@ const searchFilm = async (film) => {
 };
 
 console.log(film.value);
-</script>
+</script> -->
 <template>
   <div
     class="is-flex is-justify-content-center is-flex-direction-column is-align-items-center"
@@ -28,8 +28,6 @@ console.log(film.value);
           type="search"
           class="input is-primary"
           placeholder="Rechercher un film..."
-          v-model="film"
-          @submit="searchFilm"
         />
       </p>
     </div>

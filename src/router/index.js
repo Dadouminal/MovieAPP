@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import MostLike from "../views/MostLike.vue";
 
-
 const routes = [
   { path: "/", component: Home },
   { path: "/MostLike", component: MostLike },
