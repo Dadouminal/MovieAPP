@@ -1,9 +1,14 @@
 <script setup>
+import { ref } from "vue";
 defineProps({
   movie: {
-    type: String,
+    type: Object,
   },
 });
+
+let moreLikeMovie = ref([""]);
+
+const addMovieToMoreLike = (film) => {};
 </script>
 <template>
   <section class="section">
@@ -25,9 +30,7 @@ defineProps({
         </p>
 
         <h2 class="subtitle mb-1">Synopsis</h2>
-        <p class="content text-xs h-auto">
-          {{ movie.overview.slice(0, 150) }}...
-        </p>
+        <p class="content text-xs h-auto">{{ movie.overview }}...</p>
       </div>
       <div class="card-footer">
         <div class="card-footer-item">

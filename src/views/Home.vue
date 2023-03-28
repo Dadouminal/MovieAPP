@@ -1,7 +1,7 @@
 <script setup>
 import axios from "axios";
 import { ref } from "vue";
-import SearchComponent from "../components/SearchComponent.vue";
+
 import CardComponent from "../components/CardComponent.vue";
 let filmFinded = ref([""]);
 const searchFilm = async () => {
@@ -24,7 +24,7 @@ searchFilm();
       <span class="has-text-primary">Movie</span>
       <span>App</span>
     </h2>
-    <SearchComponent />
+
     <div class="columns is-multiline">
       <div class="column is-4" v-for="movie in filmFinded">
         <CardComponent :movie="movie" />
