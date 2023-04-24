@@ -1,14 +1,6 @@
 <script setup>
 import { ref } from "vue";
-defineProps({
-  movie: {
-    type: Object,
-  },
-});
-
-let moreLikeMovie = ref([""]);
-
-const addMovieToMoreLike = (film) => {};
+defineProps(["movie"]);
 </script>
 <template>
   <section class="section">
@@ -16,7 +8,7 @@ const addMovieToMoreLike = (film) => {};
       <div class="card-image">
         <figure class="image">
           <img
-            :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
+            :src="'https://image.tmdb.org/t/p/original' + movie.poster_path"
             alt=""
           />
         </figure>
@@ -31,11 +23,6 @@ const addMovieToMoreLike = (film) => {};
 
         <h2 class="subtitle mb-1">Synopsis</h2>
         <p class="content text-xs h-auto">{{ movie.overview }}...</p>
-      </div>
-      <div class="card-footer">
-        <div class="card-footer-item">
-          <button class="button is-link">Ajouter coup de coeur</button>
-        </div>
       </div>
     </div>
   </section>

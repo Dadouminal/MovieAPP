@@ -30,10 +30,6 @@
     >
       <div class="navbar-start">
         <router-link to="/" class="navbar-item"> Home </router-link>
-
-        <router-link to="/Mostlike" class="navbar-item">
-          Coup de coeur
-        </router-link>
       </div>
     </div>
   </nav>
