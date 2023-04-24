@@ -53,7 +53,7 @@ watch(film,(value,oldValue)=>{
   searchFilm(value)
 })
 
-const objSorted = ()=>useSorted(filmFinded, (a, b) => a.vote_average - b.vote_average)
+
 </script>
 
 <template>

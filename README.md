@@ -1,8 +1,8 @@
-Ceci est une application simple réalisée avec VueJs pour visualiser les films,Rechercher les films et obtenir un classement par note des films.
+Ceci est une application simple réalisée avec VueJs pour visualiser les films,Rechercher les films.
 
-Vos apports sont les bienvenus car il s'agit d'un challenge que je me suis ou plutôt m'a été donné de relever. Et le code est absolument sans ChatGPT🤣
+Vos apports sont les bienvenus car il s'agit d'un challenge que je me suis ou plutôt m'a été donné de relever. Et le code est absolument sans ChatGPT🤣. Je me suis habitué à lire les documentations et mieux utiliser mon éditeur de code préféré.
 
-Rien de compliqué, allez juste aux pages dédiées pour l'utiliser.
+Rien de compliqué,recherchezz votre film et la magie s'opère.
 Responsive par BulmaCSS (meilleur framework CSS😎) et TailwindCSS pour les variantes de couleurs (flemme d'ajouter du SASS à bulma😄)
 
 L'application utilise l'API de The Movie Database (TMDB) pour récupérer les informations sur les films.
