@@ -1,15 +1,15 @@
 <script setup>
 import { useSorted } from "@vueuse/core"; 
 import axios from "axios";
-import { useMoviesStore } from "../../store";
+import {useMoviesStore} from "../store"
 import { ref, onMounted, watch } from "vue";
 
 
 
 import CardComponent from "../components/CardComponent.vue";
 
-// let filmFinded = ref([""]);
-const movieStore=useMoviesStore()
+
+const movieStore=useMoviesStore();
 // // Fonction pour rechercher les films
 // const loadFilm = async () => {
 //   const fetchedFilm = await axios
@@ -27,7 +27,7 @@ onMounted(() => {
 
 // Code de recherche des films
 
-let film = ref("");
+let film = movieStore.$state.movie;
 const isFetching = ref(false);
 
 // const searchFilm = async (film) => {
@@ -88,7 +88,7 @@ watch(film,(value,oldValue)=>{
           <!-- <span>{{ film }}</span> -->
         </p>
         <p class="control">
-          <button class="button" @click="searchFilm(film)">search</button>
+          <button class="button" @click="movieStore.getTheMovie(film)">search</button>
         </p>
       </div>
       <p class="buttons is-grouped">
@@ -101,7 +101,7 @@ watch(film,(value,oldValue)=>{
     <p v-if="isFetching" class="has-text-link">Loading...</p>
 
     <div class="columns is-multiline">
-      <div class="column is-4" v-for="movie in filmFinded">
+      <div class="column is-4" v-for="movie in movieStore.searchMovie">
         <CardComponent :movie="movie" />
       </div>
     </div>

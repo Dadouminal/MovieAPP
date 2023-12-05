@@ -24,7 +24,7 @@ defineProps(["movie"]);
         <h2 class="subtitle mb-1">Synopsis</h2>
         <p class="content text-xs h-auto">{{ movie.overview }}...</p>
       </div>
-      <router-link to="/movie/:id">
+      <router-link to="/movie/id">
         <button class="button is-inverted is-primary">Voir</button>
       </router-link>
     </div>
