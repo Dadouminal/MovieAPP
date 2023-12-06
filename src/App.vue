@@ -7,3 +7,9 @@ import { RouterView } from "vue-router";
   <Navbar />
   <router-view></router-view>
 </template>
+
+<style>
+body {
+  background-color: #2a292e;
+}
+</style>

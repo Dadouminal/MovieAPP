@@ -10,16 +10,7 @@ import CardComponent from "../components/CardComponent.vue";
 
 
 const movieStore=useMoviesStore();
-// // Fonction pour rechercher les films
-// const loadFilm = async () => {
-//   const fetchedFilm = await axios
-//     .get(
-//       "https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=code&language=fr-FR"
-//     )
-//     .then((response) => (filmFinded.value = response.data.results));
-// };
 
-// Afficher les films de la base de données
 
 onMounted(() => {
   movieStore.getMovies();
@@ -30,26 +21,7 @@ onMounted(() => {
 let film = movieStore.$state.movie;
 const isFetching = ref(false);
 
-// const searchFilm = async (film) => {
-//   isFetching.value = true;
-//   await axios
-//     .get(
-//       `https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${film}&language=fr-FR`
-//     )
-//     .then((response) => {
-//       // console.log(response);
-//       // filmFinded.value = [];
-//       filmFinded.value = response.data.results;
-//       isFetching.value = false;
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
 
-//   return filmFinded;
-
-//   // findedFilm.value.push(data.value);
-// };
 
 watch(film,(value,oldValue)=>{
   // console.log(value,oldValue);
@@ -89,19 +61,15 @@ watch(film,(value,oldValue)=>{
         </p>
         <p class="control">
           <button class="button" @click="movieStore.getTheMovie(film)">search</button>
+          
         </p>
       </div>
-      <p class="buttons is-grouped">
-        <button class="button is-rounded is-primary" @click="objSorted">
-          <span class="icon"><i class="ri-arrow-drop-up-fill"></i></span>Top
-        </button>
-        
-      </p>
+     
     </div>
-    <p v-if="isFetching" class="has-text-link">Loading...</p>
+    <p v-if="movieStore.isFetching" class="has-text-link">Loading...</p>
 
     <div class="columns is-multiline">
-      <div class="column is-4" v-for="movie in movieStore.searchMovie">
+      <div class="column is-4" v-for="movie in movieStore.searchMovie" :key="movie.id">
         <CardComponent :movie="movie" />
       </div>
     </div>
