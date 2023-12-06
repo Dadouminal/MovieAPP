@@ -45,7 +45,7 @@ watch(film,(value,oldValue)=>{
     <div
       class="is-flex is-justify-content-center is-flex-direction-column is-align-items-center"
     >
-      <div class="field is-fullwidth has-addons">
+      <div class="field is-fullwidth has-addons mb-2">
         <p class="control has-icons-left">
           <span class="ri-search-line is-left icon"></span>
 
@@ -69,7 +69,7 @@ watch(film,(value,oldValue)=>{
     <p v-if="movieStore.isFetching" class="has-text-link">Loading...</p>
 
     <div class="columns is-multiline">
-      <div class="column is-4" v-for="movie in movieStore.searchMovie" :key="movie.id">
+      <div class="column is-3-desktop" v-for="movie in movieStore.searchMovie" :key="movie.id">
         <CardComponent :movie="movie" />
       </div>
     </div>

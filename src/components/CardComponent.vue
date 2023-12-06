@@ -12,7 +12,7 @@ defineProps(["movie"]);
         />
       </figure>
     </div>
-    <div class="card-content">
+    <div class="card-content h-80">
       <p class="content font-bold m-0">{{ movie.title }}</p>
       <p class="text-slate-600">Sorti le: {{ movie.release_date }}</p>
       <p class="content">
@@ -21,7 +21,9 @@ defineProps(["movie"]);
       </p>
 
       <h2 class="subtitle mb-1">Synopsis</h2>
-      <p class="content text-xs h-auto">{{ movie.overview }}...</p>
+      <p class="content text-xs h-auto">
+        {{ movie.overview.slice(0, 300) }}...
+      </p>
     </div>
     <router-link :to="'/movie/' + movie.title">
       <button class="button is-inverted is-primary">Voir</button>
@@ -29,7 +31,4 @@ defineProps(["movie"]);
   </div>
 </template>
 
-<style scoped>
-.image {
-}
-</style>
+<style scoped></style>
